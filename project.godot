@@ -18,3 +18,6 @@ config/icon="res://icon.svg"
 [global_group]
 
 player=""
+enemy=""
+enemy_bullet=""
+player_bullet=""

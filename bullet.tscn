@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkfvh26eqd8dy"]
+
+[ext_resource type="Script" uid="uid://c6n45r87lfodf" path="res://bullet.gd" id="1_v7oki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
+radius = 9.013878
+
+[node name="Bullet" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v8qja")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 400
+lifetime = 0.09999999999999999
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+orbit_velocity_max = 1000.0
+linear_accel_min = -100.0
+linear_accel_max = -50.0
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+color = Color(0.21176471, 0.91764706, 0.93333334, 1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
